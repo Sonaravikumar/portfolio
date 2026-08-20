@@ -3,8 +3,8 @@ import ExperienceCard from "./ExperienceCard";
 
 function Experience() {
   return (
-    <section className="experience">
-      <h2>Experience</h2>
+    <section className="experience" id="experience">
+      <h2 className="section-title">Experience</h2>
 
       <div className="experience-container">
 

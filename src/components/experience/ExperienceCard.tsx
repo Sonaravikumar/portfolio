@@ -9,19 +9,28 @@ function ExperienceCard({
 }: ExperienceCardProps) {
   return (
     <div className="experience-card">
-      <h3>{experience.role}</h3>
+      <div className="experience-header">
+        <div className="experience-title-group">
+          <h3>{experience.role}</h3>
+          <div className="experience-company">{experience.company}</div>
+        </div>
+        <span className="experience-duration">{experience.duration}</span>
+      </div>
 
-      <h4>{experience.company}</h4>
-
-      <p>{experience.duration}</p>
-
-      <ul>
+      <ul className="experience-bullets">
         {experience.description.map((point) => (
           <li key={point}>{point}</li>
         ))}
       </ul>
 
-      <p><strong>Skills:</strong> {experience.skills.join(", ")}</p>
+      <div className="experience-skills-section">
+        <div className="experience-skills-title">Skills & Technologies</div>
+        <div className="experience-skills-list">
+          {experience.skills.map((skill) => (
+            <span key={skill}>{skill}</span>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

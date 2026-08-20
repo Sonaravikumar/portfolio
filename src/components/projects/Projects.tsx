@@ -3,8 +3,8 @@ import ProjectCard from "./ProjectCard";
 
 function Projects() {
   return (
-    <section className="projects">
-      <h2>Projects</h2>
+    <section className="projects" id="projects">
+      <h2 className="section-title">Projects</h2>
 
       <div className="projects-container">
         {projects.map((project) => (

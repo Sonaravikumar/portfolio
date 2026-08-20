@@ -6,11 +6,10 @@ function Navbar() {
         </h2>
 
       <ul className="nav-links">
-        <li>About</li>
-        <li>Skills</li>
-        <li>Experience</li>
-        <li>Projects</li>
-        <li>Contact</li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
       </ul>
     </nav>
   );

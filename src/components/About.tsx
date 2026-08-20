@@ -2,12 +2,14 @@ import { profile } from "../data/portfolio";
 
 function About() {
   return (
-    <section className="about">
-      <h2>About Me</h2>
+    <section className="about" id="about">
+      <h2 className="section-title">About Me</h2>
 
-      <p>
-        {profile.about}
-      </p>
+      <div className="about-card">
+        <p>
+          {profile.about}
+        </p>
+      </div>
     </section>
   );
 }

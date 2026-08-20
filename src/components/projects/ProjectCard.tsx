@@ -9,9 +9,11 @@ function ProjectCard({ project }: ProjectCardProps) {
     <article className="project-card">
       <h3>{project.title}</h3>
 
-      {project.description.map((desc, idx) => (
-        <p key={idx}>{desc}</p>
-      ))}
+      <div className="project-desc-group">
+        {project.description.map((desc, idx) => (
+          <p key={idx}>{desc}</p>
+        ))}
+      </div>
 
       <div className="project-technologies">
         {project.technologies.map((technology) => (
@@ -21,15 +23,26 @@ function ProjectCard({ project }: ProjectCardProps) {
         ))}
       </div>
 
-      {project.liveDemo && (
-        <a
-          href={project.liveDemo}
-          target="_blank"
-          rel="noreferrer"
-        >
-          Live Demo
-        </a>
-      )}
+      <div className="project-links">
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
+        )}
+        {project.liveDemo && (
+          <a
+            href={project.liveDemo}
+            target="_blank"
+            rel="noreferrer"
+          >
+            Live Demo
+          </a>
+        )}
+      </div>
     </article>
   );
 }

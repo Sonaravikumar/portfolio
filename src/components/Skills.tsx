@@ -2,8 +2,8 @@ import { skillCategories } from "../data/portfolio";
 
 function Skills() {
   return (
-    <section className="skills">
-      <h2>Skills</h2>
+    <section className="skills" id="skills">
+      <h2 className="section-title">Skills</h2>
 
       <div className="skills-container">
 
@@ -14,7 +14,7 @@ function Skills() {
           >
             <h3>{category.title}</h3>
 
-            <ul>
+            <ul className="skill-list">
               {category.skills.map((skill) => (
                 <li key={skill}>
                   {skill}

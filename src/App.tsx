@@ -14,6 +14,9 @@ function App() {
       <Skills />
       <Experience />
       <Projects />
+      <footer className="footer">
+        <p>&copy; {new Date().getFullYear()} Sona Pandi. Built with React & TypeScript.</p>
+      </footer>
     </>
   );
 }
