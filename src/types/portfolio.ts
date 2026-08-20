@@ -11,3 +11,11 @@ export interface SkillCategory {
   title: string;
   skills: string[];
 }
+
+export interface Experience {
+  role: string;
+  company: string;
+  duration: string;
+  description: string[];
+  skills: string[];
+}
