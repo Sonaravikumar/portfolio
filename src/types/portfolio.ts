@@ -19,3 +19,11 @@ export interface Experience {
   description: string[];
   skills: string[];
 }
+
+export interface Project {
+  title: string;
+  description: string[];
+  technologies: string[];
+  github?: string;
+  liveDemo?: string;
+}

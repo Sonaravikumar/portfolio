@@ -105,6 +105,7 @@ body {
   color: #cbd5e1;
 }
 
+/* Skills */
 .skills {
   padding: 80px;
 }
@@ -144,6 +145,7 @@ body {
   color: #cbd5e1;
 }
 
+/* Experience */
 .experience {
   padding: 80px;
 }
@@ -179,4 +181,96 @@ body {
 
 .experience-card p {
   color: #cbd5e1;
+}
+
+/* Projects */
+.projects {
+  padding: 80px;
+}
+
+.projects h2 {
+  font-size: 40px;
+  color: #38bdf8;
+  margin-bottom: 40px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+}
+
+.project-card {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.project-card p {
+  color: #cbd5e1;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+.project-technologies span {
+  background: #0f172a;
+  color: #38bdf8;
+
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  font-size: 14px;
+}
+
+.project-card a {
+  display: inline-block;
+
+  width: fit-content;
+
+  text-decoration: none;
+  color: white;
+
+  border: 1px solid #38bdf8;
+
+  padding: 10px 16px;
+  border-radius: 8px;
+
+  margin-top: auto;
+}
+
+.project-card a:hover {
+  background: #38bdf8;
+  color: #0f172a;
+}
+
+/* Responsive */
+
+@media (max-width: 768px) {
+  .projects {
+    padding: 50px 25px;
+  }
+
+  .projects h2 {
+    font-size: 32px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
 }

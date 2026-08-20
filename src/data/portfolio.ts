@@ -118,3 +118,75 @@ export const experiences = [
     ]
   }
 ];
+
+export const projects = [
+  {
+    title: "CareerPro AI",
+    description:[
+      "Developed backend services for an AI-powered career platform supporting resume generation, LinkedIn optimization, interview preparation, and job tracking.",
+      "Integrated OpenAI API to power AI-driven features and content generation. Built REST APIs for managing user data, workflows, and automation processes.",
+      "Implemented email notification systems and optimized backend logic for performance and scalability."
+    ],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "OpenAI API",
+    ],
+
+    liveDemo:
+      "https://careerpro-ai.com",
+  },
+
+  {
+    title: "Inderact",
+    description:[
+      "Built a scalable backend for a WhatsApp automation platform using Node.js and Meta WhatsApp Cloud API. Implemented template messaging, keyword-based auto replies, and chatbot workflows.",
+      "Designed asynchronous processing using RabbitMQ for handling background jobs and message queues. Integrated webhook-based event handling for real-time communication.",
+      "Developed features like broadcast messaging, drip campaigns, and scheduled message delivery. Focused on building reliable, production-ready backend systems with optimized API performance."
+    ],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Meta WhatsApp Cloud API",
+      "RabbitMQ"
+    ],
+    liveDemo:
+      "https://inderact.masfob.com",
+  },
+
+  {
+    title: "Website Builder Platform",
+    description:[
+      "Built a no-code website builder enabling users to create, edit, and publish websites without coding. Developed backend APIs and contributed to frontend implementation using React.js and GrapesJS.",
+    ],
+    technologies: [
+      "React.js",
+      "GrapesJS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+
+    liveDemo:
+      "https://website-builder-2026.netlify.app",
+  },
+
+  {
+    title: "AI Gen Studio",
+    description: [
+      "Developed backend APIs for AI-powered content generation, post ideation, and marketing automation workflows.",
+      "Designed scalable API architecture and integrated AI services to support content creation use cases."
+    ],
+
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "OpenAI API",
+    ],
+
+    liveDemo:
+      "https://aigenstudio-server.onrender.com",
+  },
+];

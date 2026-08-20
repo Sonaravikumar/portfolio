@@ -20,6 +20,8 @@ function ExperienceCard({
           <li key={point}>{point}</li>
         ))}
       </ul>
+
+      <p><strong>Skills:</strong> {experience.skills.join(", ")}</p>
     </div>
   );
 }
