@@ -56,6 +56,7 @@ h4 {
 .gradient-text {
   background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -107,6 +108,7 @@ section {
   cursor: pointer;
   background: linear-gradient(135deg, #fff 40%, var(--primary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -258,6 +260,7 @@ section {
   padding: 1px;
   background: linear-gradient(135deg, var(--border), rgba(56, 189, 248, 0.4), var(--border));
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   pointer-events: none;
