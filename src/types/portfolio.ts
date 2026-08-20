@@ -6,3 +6,8 @@ export interface Profile {
   linkedin: string;
   about: string;
 }
+
+export interface SkillCategory {
+  title: string;
+  skills: string[];
+}
