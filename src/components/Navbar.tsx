@@ -1,9 +1,11 @@
 function Navbar() {
   return (
-    <nav>
-      <h2>Sona Pandi</h2>
+    <nav className="navbar">
+        <h2 className="logo">
+            Sona Pandi
+        </h2>
 
-      <ul>
+      <ul className="nav-links">
         <li>About</li>
         <li>Skills</li>
         <li>Experience</li>

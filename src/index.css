@@ -9,3 +9,81 @@ body {
   color: white;
   font-family: Arial, sans-serif;
 }
+
+/* Navbar */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 20px 80px;
+}
+
+.logo {
+  font-size: 28px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+
+  list-style: none;
+}
+
+.nav-links li {
+  cursor: pointer;
+}
+
+/* Hero */
+
+.hero {
+  min-height: 80vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 80px;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero-tag {
+  color: #38bdf8;
+  margin-bottom: 10px;
+}
+
+.hero h1 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 32px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.hero-buttons a {
+  text-decoration: none;
+  color: white;
+
+  border: 1px solid #38bdf8;
+
+  padding: 12px 20px;
+
+  border-radius: 8px;
+}

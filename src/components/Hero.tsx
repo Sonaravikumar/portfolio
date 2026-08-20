@@ -2,22 +2,30 @@ import { profile } from "../data/portfolio";
 
 function Hero() {
   return (
-    <section>
-      <h1>{profile.name}</h1>
+    <section className="hero">
+        <div className="hero-content">
+            <p className="hero-tag">
+                👋 Hello, I'm
+            </p>
 
-      <h2>{profile.role}</h2>
+            <h1>{profile.name}</h1>
 
-      <p>{profile.tagline}</p>
+            <h2>{profile.role}</h2>
 
-      <div>
-        <a href={profile.github}>
-          GitHub
-        </a>
+            <p className="hero-description">
+                {profile.tagline}
+            </p>
 
-        <a href={profile.linkedin}>
-          LinkedIn
-        </a>
-      </div>
+            <div className="hero-buttons">
+                <a href={profile.github}>
+                    GitHub
+                </a>
+
+                <a href={profile.linkedin}>
+                    LinkedIn
+                </a>
+            </div>
+        </div>
     </section>
   );
 }
