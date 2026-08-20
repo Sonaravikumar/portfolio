@@ -4,4 +4,5 @@ export interface Profile {
   tagline: string;
   github: string;
   linkedin: string;
+  about: string;
 }

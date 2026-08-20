@@ -87,3 +87,20 @@ body {
 
   border-radius: 8px;
 }
+
+.about {
+  padding: 80px;
+}
+
+.about h2 {
+  font-size: 40px;
+  color: #38bdf8;
+  margin-bottom: 20px;
+}
+
+.about p {
+  max-width: 800px;
+  font-size: 18px;
+  line-height: 1.8;
+  color: #cbd5e1;
+}
