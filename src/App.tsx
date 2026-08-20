@@ -1,6 +1,10 @@
+import Hero from "./components/Hero";
+
 function App() {
   return (
-    <h1>Hello Sona 👋</h1>
+    <>
+      <Hero />   
+    </>
   );
 }
 
