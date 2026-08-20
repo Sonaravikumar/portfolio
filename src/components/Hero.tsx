@@ -1,4 +1,4 @@
-import { profile } from "../data/profile";
+import { profile } from "../data/portfolio";
 
 function Hero() {
   return (
