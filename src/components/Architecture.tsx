@@ -3,7 +3,12 @@ import { architectures } from "../data/portfolio";
 function Architecture() {
     return (
         <section className="architecture" id="architecture">
-            <h2 className="section-title">System Architectures</h2>
+            <h2 className="section-title">
+                System <span className="gradient-text">Architectures</span>
+            </h2>
+            <p className="section-subtitle">
+                High-level designs and data flow diagrams of the backend systems and platforms I've engineered.
+            </p>
 
             <div className="architecture-container">
                 {architectures.map((architecture) => (

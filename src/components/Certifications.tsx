@@ -3,7 +3,12 @@ import { certifications } from "../data/portfolio";
 function Certifications() {
     return (
         <section className="certifications" id="certifications">
-            <h2 className="section-title">Certifications</h2>
+            <h2 className="section-title">
+                My <span className="gradient-text">Certifications</span>
+            </h2>
+            <p className="section-subtitle">
+                Professional certifications and credentials that validate my technical expertise and continuous learning.
+            </p>
 
             <div className="certifications-container">
                 {certifications.map((certification) => (
