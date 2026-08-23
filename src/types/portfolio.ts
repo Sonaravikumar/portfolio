@@ -27,3 +27,13 @@ export interface Project {
   github?: string;
   liveDemo?: string;
 }
+
+export interface Architecture {
+  title: string;
+  flow: string[];
+}
+
+export interface Certification {
+  title: string;
+  url: string;
+}

@@ -8,8 +8,8 @@ export const profile = {
 
   linkedin:
     "https://www.linkedin.com/in/sonapandi-ravikumar",
-  about: 
-  "Backend Developer with 1+ year of experience building scalable REST APIs and web applications using Node.js, Express.js, and MongoDB. Skilled in backend architecture, third-party API integrations, authentication, and automation workflows. Experienced in developing messaging automation solutions and contributing to full-stack applications with React.js. Passionate about creating reliable, efficient, and scalable software solutions."
+  about:
+    "Backend Developer with 1+ year of experience building scalable REST APIs and web applications using Node.js, Express.js, and MongoDB. Skilled in backend architecture, third-party API integrations, authentication, and automation workflows. Experienced in developing messaging automation solutions and contributing to full-stack applications with React.js. Passionate about creating reliable, efficient, and scalable software solutions."
 };
 
 export const skillCategories = [
@@ -122,7 +122,7 @@ export const experiences = [
 export const projects = [
   {
     title: "CareerPro AI",
-    description:[
+    description: [
       "Developed backend services for an AI-powered career platform supporting resume generation, LinkedIn optimization, interview preparation, and job tracking.",
       "Integrated OpenAI API to power AI-driven features and content generation. Built REST APIs for managing user data, workflows, and automation processes.",
       "Implemented email notification systems and optimized backend logic for performance and scalability."
@@ -140,7 +140,7 @@ export const projects = [
 
   {
     title: "Inderact",
-    description:[
+    description: [
       "Built a scalable backend for a WhatsApp automation platform using Node.js and Meta WhatsApp Cloud API. Implemented template messaging, keyword-based auto replies, and chatbot workflows.",
       "Designed asynchronous processing using RabbitMQ for handling background jobs and message queues. Integrated webhook-based event handling for real-time communication.",
       "Developed features like broadcast messaging, drip campaigns, and scheduled message delivery. Focused on building reliable, production-ready backend systems with optimized API performance."
@@ -158,7 +158,7 @@ export const projects = [
 
   {
     title: "Website Builder Platform",
-    description:[
+    description: [
       "Built a no-code website builder enabling users to create, edit, and publish websites without coding. Developed backend APIs and contributed to frontend implementation using React.js and GrapesJS.",
     ],
     technologies: [
@@ -188,5 +188,64 @@ export const projects = [
 
     liveDemo:
       "https://aigenstudio-server.onrender.com",
+  },
+];
+
+export const architectures = [
+  {
+    title: "CareerPro AI",
+    flow: [
+      "React Frontend",
+      "Node.js Backend",
+      "OpenAI API",
+      "MongoDB",
+    ],
+  },
+
+  {
+    title: "WhatsApp Automation - Inderact",
+    flow: [
+      "Flutter Frontend",
+      "WhatsApp User",
+      "Meta Cloud API",
+      "Node.js Backend",
+      "RabbitMQ",
+      "MongoDB",
+    ],
+  },
+
+  {
+    title: "Website Builder",
+    flow: [
+      "React.Js Frontend",
+      "GrapesJS",
+      "Node.js Backend",
+      "MongoDB"
+    ],
+  },
+
+  {
+    title: "AI Gen Studio",
+    flow: [
+      "React.Js Frontend",
+      "Node.js Backend",
+      "OpenAI API",
+      "MongoDB",
+    ],
+  },
+];
+
+export const certifications = [
+  {
+    title: "Getting Started with NodeJS",
+    url: "",
+  },
+  {
+    title: "Introduction to Express JS",
+    url: "",
+  },
+  {
+    title: "AI For India 2.0",
+    url: "",
   },
 ];
