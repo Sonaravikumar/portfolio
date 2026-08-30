@@ -479,17 +479,53 @@ export const architectures: import("../types/portfolio").Architecture[] = [
   }
 ];
 
-export const certifications = [
+export const certifications: import("../types/portfolio").Certification[] = [
   {
+    id: "nodejs-simplilearn",
     title: "Getting Started with NodeJS",
-    url: "",
+    issuer: "Simplilearn | SkillUp",
+    issueDate: "2024",
+    category: "Backend & Runtime",
+    credentialType: "pdf",
+    credentialPath: "/certificates/nodejs_certi_simplilearn.pdf",
+    skills: ["Node.js", "Asynchronous JavaScript", "Event Loop", "NPM Modules", "Backend API Architecture"],
+    description: "Verified credential certifying mastery of Node.js event-driven non-blocking runtime, async/await concurrency patterns, file stream pipelines, and backend server development.",
+    url: "/certificates/nodejs_certi_simplilearn.pdf"
   },
   {
+    id: "expressjs-simplilearn",
     title: "Introduction to Express JS",
-    url: "",
+    issuer: "Simplilearn | SkillUp",
+    issueDate: "2024",
+    category: "Web Frameworks & APIs",
+    credentialType: "pdf",
+    credentialPath: "/certificates/expressjs_certi_simplilearn.pdf",
+    skills: ["Express.js", "RESTful Routing", "Middleware Pipelines", "Error Handling", "API Security"],
+    description: "Verified credential validating proficiency in Express.js server architecture, custom request/response middleware chains, route parameter handling, and scalable REST API development.",
+    url: "/certificates/expressjs_certi_simplilearn.pdf"
   },
   {
+    id: "ai-for-india",
     title: "AI For India 2.0",
-    url: "",
+    issuer: "GUVI & Skill India Digital | NSDC",
+    issueDate: "Aug 15, 2023",
+    category: "Artificial Intelligence",
+    credentialType: "image",
+    credentialPath: "/certificates/ai_india_certi.jpg",
+    skills: ["Artificial Intelligence", "Machine Learning", "Python", "Skill India Digital", "AI Fundamentals"],
+    description: "Official Certificate of Completion awarded to Sona Pandi for successfully completing the online skilling course on AI For India 2.0 offered by GUVI through Skill India Digital, authorized by the National Skill Development Corporation (NSDC).",
+    url: "/certificates/ai_india_certi.jpg"
   },
+  {
+    id: "spoken-tutorial-iitb",
+    title: "Spoken Tutorial Participant",
+    issuer: "IIT Bombay | Ministry of Education, Govt. of India",
+    issueDate: "2024",
+    category: "Academic Recognition",
+    credentialType: "pdf",
+    credentialPath: "/certificates/spoken_tutorial_iit_bombay.pdf",
+    skills: ["Online Learning", "ICT Education", "Technical Training", "Self-Paced Learning"],
+    description: "Participant Certificate awarded by the Spoken Tutorial Project at IIT Bombay — a National Mission on Education through ICT initiative funded by the Ministry of Education, Government of India.",
+    url: "/certificates/spoken_tutorial_iit_bombay.pdf"
+  }
 ];

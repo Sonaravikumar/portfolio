@@ -57,6 +57,14 @@ export interface Architecture {
 }
 
 export interface Certification {
+  id: string;
   title: string;
-  url: string;
+  issuer: string;
+  issueDate?: string;
+  category: string;
+  credentialType: "pdf" | "image";
+  credentialPath: string;
+  skills: string[];
+  description: string;
+  url?: string;
 }
