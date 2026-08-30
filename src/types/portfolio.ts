@@ -16,17 +16,24 @@ export interface SkillCategory {
 export interface Experience {
   role: string;
   company: string;
+  location?: string;
+  type?: string;
   duration: string;
+  isCurrent?: boolean;
   description: string[];
   skills: string[];
 }
 
 export interface Project {
   title: string;
+  category?: string;
+  tagline?: string;
+  status?: string;
   description: string[];
   technologies: string[];
   github?: string;
   liveDemo?: string;
+  architectureId?: string;
 }
 
 export interface ArchitectureNode {

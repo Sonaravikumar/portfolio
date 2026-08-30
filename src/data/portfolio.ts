@@ -76,106 +76,131 @@ export const skillCategories = [
   }
 ];
 
-export const experiences = [
+export const experiences: import("../types/portfolio").Experience[] = [
   {
     role: "Software Developer - Backend",
     company: "Zevotria",
+    location: "Madurai, India",
+    type: "Full-time",
     duration: "Jan 2025 - Present",
+    isCurrent: true,
     description: [
-      "Built and maintained scalable REST APIs using Node.js, Express.js, and MongoDB with authentication, RBAC, and optimized database queries.",
-      "Implemented rate-limited API architecture to protect backend services and control request traffic.",
-      "Designed and implemented job queue system using RabbitMQ for asynchronous background tasks in messaging automation workflows.",
-      "Integrated OpenAI API, Razorpay payment gateway, and Meta WhatsApp Cloud API, including webhook verification and realtime event handling.",
-      "Designed keyword-based WhatsApp automation workflows reducing manual response effort.",
-      "Developed email notification system for AI career platform events.",
-      "Built automation features supporting broadcast messaging and scheduled drip campaigns for large-scale customer engagement with scheduled execution.",
-      "Debugged and resolved production issues, fixing runtime bugs and improving system reliability."
+      "Engineered and maintained high-throughput REST APIs using Node.js, Express.js, and MongoDB with JWT authentication, RBAC authorization, and optimized compound indexing.",
+      "Architected rate-limited request throttling systems to safeguard backend microservices against traffic surges and malicious abuse.",
+      "Designed and deployed asynchronous task queue workers using RabbitMQ for high-volume WhatsApp broadcast campaigns and background event processing.",
+      "Integrated OpenAI GPT-4 API, Razorpay Payment Gateway, and Meta WhatsApp Cloud API with HMAC-SHA256 webhook signature validation and real-time event streaming.",
+      "Built automated keyword chatbot workflows and drip marketing engines supporting scheduled broadcast execution for thousands of users.",
+      "Monitored production services, debugged runtime bottlenecks, and reduced API response latencies."
     ],
     skills: [
+      "Node.js",
       "Express.js",
       "MongoDB",
       "RabbitMQ",
-      "Rate Limiting",
       "Redis",
+      "Rate Limiting",
       "OpenAI API",
-      "WhatsApp API",
-      "Razorpay"
+      "WhatsApp Cloud API",
+      "Razorpay",
+      "REST APIs"
     ]
   },
-
   {
     role: "Web Development Intern",
-    company: "Masfob@Success Life Mantra",
+    company: "Masfob @ Success Life Mantra",
+    location: "Remote",
+    type: "Internship",
     duration: "Aug 2024 - Dec 2024",
+    isCurrent: false,
     description: [
-      "Designed and customized responsive landing pages using HTML, Tailwind CSS, and React.js.",
-      "Built and modified UI components for email builder projects using GrapesJS."
+      "Developed and customized responsive, high-converting landing pages using HTML5, Tailwind CSS, and React.js.",
+      "Engineered visual drag-and-drop UI components for interactive email builder workflows using GrapesJS.",
+      "Collaborated with senior engineers to implement client-side state management and cross-browser responsiveness."
     ],
     skills: [
-      "HTML",
+      "React.js",
       "Tailwind CSS",
-      "React",
-      "GrapesJS"
+      "GrapesJS",
+      "HTML5 / CSS3",
+      "JavaScript (ES6+)",
+      "REST APIs"
     ]
   },
-
   {
     role: "Frontend Intern",
     company: "Lithi Info Tech",
+    location: "Madurai, India",
+    type: "Internship",
     duration: "Jan 2024 - Apr 2024",
+    isCurrent: false,
     description: [
-      "Implemented React.js fundamentals and built reusable UI components.",
-      "Assisted in debugging and feature enhancement."
+      "Built reusable, modular UI components using React.js and CSS modules following clean code principles.",
+      "Assisted in frontend performance optimization, API data binding, and resolving cross-browser layout defects.",
+      "Utilized Git for feature branching, code reviews, and collaborative team sprints."
     ],
     skills: [
-      "HTML",
-      "CSS",
-      "React"
+      "React.js",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS3",
+      "Git & GitHub",
+      "UI/UX Design"
     ]
   }
 ];
 
-export const projects = [
+export const projects: import("../types/portfolio").Project[] = [
   {
     title: "CareerPro AI",
+    category: "AI Platform & Career Engine",
+    tagline: "Multimodal AI career platform for ATS resume generation, LinkedIn optimization & interview simulation.",
+    status: "Live Production",
     description: [
-      "Developed backend services for an AI-powered career platform supporting resume generation, LinkedIn optimization, interview preparation, and job tracking.",
-      "Integrated OpenAI API to power AI-driven features and content generation. Built REST APIs for managing user data, workflows, and automation processes.",
-      "Implemented email notification systems and optimized backend logic for performance and scalability."
+      "Engineered backend microservices for an AI career suite enabling automated ATS-friendly resume generation, LinkedIn profile enhancement, and real-time interview coaching.",
+      "Integrated OpenAI GPT-4 API with strict JSON schema validation for predictable content synthesis and prompt pipelining.",
+      "Implemented asynchronous email delivery workers and optimized database queries with MongoDB indexing."
     ],
     technologies: [
       "Node.js",
       "Express.js",
       "MongoDB",
       "OpenAI API",
+      "React.js",
+      "RESTful APIs"
     ],
-
-    liveDemo:
-      "https://careerpro-ai.com",
+    liveDemo: "https://careerpro-ai.com",
+    architectureId: "careerpro"
   },
-
   {
-    title: "Inderact",
+    title: "Inderact WhatsApp Automation",
+    category: "Messaging & Event Queues",
+    tagline: "High-scale WhatsApp Cloud API automation engine with RabbitMQ worker queues and webhook security.",
+    status: "Production Platform",
     description: [
-      "Built a scalable backend for a WhatsApp automation platform using Node.js and Meta WhatsApp Cloud API. Implemented template messaging, keyword-based auto replies, and chatbot workflows.",
-      "Designed asynchronous processing using RabbitMQ for handling background jobs and message queues. Integrated webhook-based event handling for real-time communication.",
-      "Developed features like broadcast messaging, drip campaigns, and scheduled message delivery. Focused on building reliable, production-ready backend systems with optimized API performance."
+      "Built a production-grade backend for WhatsApp automation using Node.js and Meta WhatsApp Cloud API with HMAC-SHA256 signature verification.",
+      "Designed asynchronous RabbitMQ message queues to handle traffic spikes, broadcast drip campaigns, and scheduled delivery without dropping webhook connections.",
+      "Implemented keyword auto-replies with Redis conversational state caching and token-bucket API rate limiting."
     ],
     technologies: [
       "Node.js",
       "Express.js",
       "MongoDB",
       "Meta WhatsApp Cloud API",
-      "RabbitMQ"
+      "RabbitMQ",
+      "Redis"
     ],
-    liveDemo:
-      "https://inderact.masfob.com",
+    liveDemo: "https://inderact.masfob.com",
+    architectureId: "inderact"
   },
-
   {
-    title: "Website Builder Platform",
+    title: "No-Code Website Builder",
+    category: "Full-Stack Web Application",
+    tagline: "Modular drag-and-drop web builder with real-time DOM serialization and instant Netlify CDN publishing.",
+    status: "Live Demo",
     description: [
-      "Built a no-code website builder enabling users to create, edit, and publish websites without coding. Developed backend APIs and contributed to frontend implementation using React.js and GrapesJS.",
+      "Built an intuitive website builder enabling non-technical users to design, style, and publish modern websites without writing code.",
+      "Integrated GrapesJS visual editor with custom React.js toolbars and a Node.js/Express backend for DOM JSON tree serialization.",
+      "Configured automated static asset bundling for lightning-fast deployments to Netlify Global CDN."
     ],
     technologies: [
       "React.js",
@@ -183,28 +208,32 @@ export const projects = [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Tailwind CSS"
     ],
-
-    liveDemo:
-      "https://website-builder-2026.netlify.app",
+    liveDemo: "https://website-builder-2026.netlify.app",
+    architectureId: "websitebuilder"
   },
-
   {
     title: "AI Gen Studio",
+    category: "Generative AI & API Backend",
+    tagline: "AI marketing content generation backend with dynamic prompt templating and quota enforcement.",
+    status: "API on Render",
     description: [
-      "Developed backend APIs for AI-powered content generation, post ideation, and marketing automation workflows.",
-      "Designed scalable API architecture and integrated AI services to support content creation use cases."
+      "Developed backend REST APIs for multi-channel marketing content synthesis, headline generation, and campaign ideation.",
+      "Architected modular prompt template factories with exponential backoff error handling for OpenAI API rate limits.",
+      "Deployed containerized services to Render with automated environment secret management and health checks."
     ],
-
     technologies: [
       "Node.js",
       "Express.js",
       "OpenAI API",
+      "MongoDB",
+      "REST APIs",
+      "Render Cloud"
     ],
-
-    liveDemo:
-      "https://aigenstudio-server.onrender.com",
-  },
+    liveDemo: "https://aigenstudio-server.onrender.com",
+    architectureId: "aigenstudio"
+  }
 ];
 
 export const architectures: import("../types/portfolio").Architecture[] = [
