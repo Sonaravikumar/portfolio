@@ -9,6 +9,7 @@ export interface Profile {
 
 export interface SkillCategory {
   title: string;
+  description?: string;
   skills: string[];
 }
 
@@ -28,9 +29,24 @@ export interface Project {
   liveDemo?: string;
 }
 
+export interface ArchitectureNode {
+  layer: string;
+  name: string;
+  type: "client" | "gateway" | "backend" | "queue" | "ai" | "database" | "integration";
+  detail: string;
+  protocol?: string;
+}
+
 export interface Architecture {
+  id: string;
   title: string;
-  flow: string[];
+  tagline: string;
+  category: string;
+  overview: string;
+  highlights: string[];
+  nodes: ArchitectureNode[];
+  decisions: string[];
+  flow?: string[];
 }
 
 export interface Certification {
