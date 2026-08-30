@@ -31,7 +31,11 @@ function Hero() {
           <a href="#contact" className="hero-btn-primary">
             Get in touch ↗
           </a>
-          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="hero-btn-secondary">
+          <a
+            href="/Sonapandi_Resume.pdf"
+            download="Sonapandi_Resume.pdf"
+            className="hero-btn-secondary"
+          >
             ↓ Download CV
           </a>
         </div>
