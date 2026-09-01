@@ -1,4 +1,5 @@
 import { profile } from "../data/portfolio";
+import { FiDownload } from "react-icons/fi";
 
 function Hero() {
   return (
@@ -29,14 +30,14 @@ function Hero() {
         {/* Action Buttons */}
         <div className="hero-actions">
           <a href="#contact" className="hero-btn-primary">
-            Get in touch ↗
+            Get in touch  ↗
           </a>
           <a
             href="/Sonapandi_Resume.pdf"
             download="Sonapandi_Resume.pdf"
             className="hero-btn-secondary"
           >
-            ↓ Download CV
+            <FiDownload /> Download CV
           </a>
         </div>
 
