@@ -34,7 +34,7 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <h2 className="logo">Sona Pandi</h2>
+        <h2 className="logo">Sona Pandi R</h2>
 
         {/* Desktop nav */}
         <ul className="nav-links">
@@ -72,7 +72,7 @@ function Navbar() {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="nav-mobile-drawer-header">
-              <span className="nav-mobile-brand">Sona Pandi</span>
+              <span className="nav-mobile-brand">Sona Pandi R</span>
               <button
                 className="nav-mobile-close"
                 onClick={() => setMenuOpen(false)}
