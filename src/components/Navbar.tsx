@@ -36,7 +36,7 @@ function Navbar() {
       <nav className="navbar">
         <div className="logo">
           <img
-            src="/Logo_for_letter__S_-removebg-preview.png"
+            src="/logo2_-removebg-preview2.png"
             alt="Sona Logo"
             className="logo-img"
           />
