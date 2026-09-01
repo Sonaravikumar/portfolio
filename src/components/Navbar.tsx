@@ -34,7 +34,14 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <h2 className="logo">Sona Pandi R</h2>
+        <div className="logo">
+          <img
+            src="/Logo_for_letter__S_-removebg-preview.png"
+            alt="Sona Logo"
+            className="logo-img"
+          />
+          <span className="logo-text">Sona Pandi R</span>
+        </div>
 
         {/* Desktop nav */}
         <ul className="nav-links">
