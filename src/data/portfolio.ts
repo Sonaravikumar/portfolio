@@ -108,7 +108,7 @@ export const experiences: import("../types/portfolio").Experience[] = [
   {
     role: "Web Development Intern",
     company: "Masfob @ Success Life Mantra",
-    location: "Remote",
+    location: "Madurai, India",
     type: "Internship",
     duration: "Aug 2024 - Dec 2024",
     isCurrent: false,
