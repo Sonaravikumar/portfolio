@@ -1,15 +1,15 @@
 export const profile = {
   name: "Sona Pandi",
-  role: "Backend Developer",
+  role: "AI & Backend Engineer",
   tagline:
-    "Building scalable APIs, automation systems and AI-powered applications.",
+    "Building scalable backend systems, intelligent automation, and AI-powered applications.",
 
   github: "https://github.com/Sonaravikumar",
 
   linkedin:
     "https://www.linkedin.com/in/sonapandi-ravikumar",
   about:
-    "Backend Developer with 1+ year of experience building scalable REST APIs and web applications using Node.js, Express.js, and MongoDB. Skilled in backend architecture, third-party API integrations, authentication, and automation workflows. Experienced in developing messaging automation solutions and contributing to full-stack applications with React.js. Passionate about creating reliable, efficient, and scalable software solutions."
+    "AI & Backend Engineer specializing in scalable backend architectures, intelligent automation, and AI-powered products. Experienced in building high-performance APIs, integrating AI models, designing workflow automation systems, and developing reliable cloud-ready applications using Node.js, Express.js, and MongoDB. Passionate about combining software engineering and artificial intelligence to create innovative solutions that scale efficiently and deliver meaningful business impact."
 };
 
 export const skillCategories = [
