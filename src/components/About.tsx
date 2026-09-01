@@ -1,5 +1,5 @@
 import { profile } from "../data/portfolio";
-import aboutImage from "../assets/about.jpg";
+import aboutImage from "../assets/about.png";
 
 const stats = [
     { value: "1+", label: "Years of experience" },

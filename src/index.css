@@ -414,19 +414,22 @@ section:not(.hero) {
 
 .about-content {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 40px;
-  align-items: start;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
 }
 
 .about-image {
+  width: 100%;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .about-image img {
-  width: 320px;
-  height: 320px;
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 20px;
   border: 1px solid rgba(56, 189, 248, 0.2);
@@ -506,21 +509,15 @@ section:not(.hero) {
 
 .about-highlights li::before {
   content: "✓";
-
   width: 24px;
   height: 24px;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   flex-shrink: 0;
-
   border-radius: 50%;
-
   background: rgba(56, 189, 248, 0.12);
   color: var(--primary);
-
   font-size: 13px;
   font-weight: 700;
 }
@@ -528,15 +525,11 @@ section:not(.hero) {
 .about-role-badge {
   display: inline-flex;
   align-items: center;
-
   margin-bottom: 20px;
   padding: 8px 14px;
-
   border-radius: 999px;
-
   background: rgba(56, 189, 248, 0.08);
   border: 1px solid rgba(56, 189, 248, 0.2);
-
   color: var(--primary);
   font-size: 13px;
   font-weight: 600;
