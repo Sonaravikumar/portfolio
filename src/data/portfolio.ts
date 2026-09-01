@@ -5,11 +5,22 @@ export const profile = {
     "Building scalable backend systems, intelligent automation, and AI-powered applications.",
 
   github: "https://github.com/Sonaravikumar",
+  linkedin: "https://www.linkedin.com/in/sonapandi-ravikumar",
 
-  linkedin:
-    "https://www.linkedin.com/in/sonapandi-ravikumar",
-  about:
-    "AI & Backend Engineer specializing in scalable backend architectures, intelligent automation, and AI-powered products. Experienced in building high-performance APIs, integrating AI models, designing workflow automation systems, and developing reliable cloud-ready applications using Node.js, Express.js, and MongoDB. Passionate about combining software engineering and artificial intelligence to create innovative solutions that scale efficiently and deliver meaningful business impact."
+  about: {
+    intro:
+      "AI & Backend Engineer specializing in scalable backend architectures, intelligent automation, and AI-powered products.",
+
+    highlights: [
+      "Build high-performance APIs with Node.js & Express.js",
+      "Integrate AI models and third-party services",
+      "Design automation workflows and messaging systems",
+      "Develop cloud-ready applications with MongoDB & PostgreSQL",
+    ],
+
+    outro:
+      "Passionate about combining software engineering and artificial intelligence to create impactful digital solutions.",
+  },
 };
 
 export const skillCategories = [

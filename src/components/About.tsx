@@ -3,19 +3,32 @@ import aboutImage from "../assets/about.jpg";
 
 const stats = [
     { value: "1+", label: "Years of experience" },
-    { value: "4+", label: "Projects shipped" },
-    { value: "3", label: "API integrations built" },
+    { value: "10+", label: "AI Features Built" },
+    { value: "99%", label: "Backend Focus" },
 ];
 
 function About() {
     return (
         <section className="about" id="about">
-            <h2 className="section-title">About Me</h2>
+            <h2 className="section-title">Who <span className="gradient-text">I Am</span></h2>
+
+            <div className="about-role-badge">
+                AI & Backend Engineer
+            </div>
 
             <div className="about-content">
                 <div>
                     <div className="about-card">
-                        <p>{profile.about}</p>
+                        <div className="about-text">
+                            <p className="about-intro">{profile.about.intro}</p>
+
+                            <ul className="about-highlights">
+                                {profile.about.highlights.map((item) => (
+                                    <li key={item}>{item}</li>
+                                ))}
+                            </ul>
+                            <p className="about-outro">{profile.about.outro}</p>
+                        </div>
                     </div>
 
                     {/* Stat Cards */}

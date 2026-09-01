@@ -471,6 +471,79 @@ section:not(.hero) {
   font-weight: 500;
 }
 
+.about-text {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.about-intro,
+.about-outro {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+.about-highlights {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.about-highlights li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  color: var(--text-main);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.about-highlights li::before {
+  content: "✓";
+
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: rgba(56, 189, 248, 0.12);
+  color: var(--primary);
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.about-role-badge {
+  display: inline-flex;
+  align-items: center;
+
+  margin-bottom: 20px;
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.2);
+
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* Skills Section */
 .skills-content {
   display: grid;
