@@ -2653,6 +2653,10 @@ section:not(.hero) {
   font-size: 20px;
   font-weight: 700;
   color: var(--text-main);
+  background: linear-gradient(135deg, #fff 40%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .nav-mobile-close {
