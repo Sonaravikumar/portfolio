@@ -73,6 +73,19 @@ export const skillCategories = [
       "VS Code",
       "Render / Netlify"
     ]
+  },
+  {
+    title: "Soft Skills",
+    description: "Leadership, collaboration & engineering mindset",
+    skills: [
+      "Problem Solving",
+      "Project Planning",
+      "Analytical Thinking",
+      "Team Collaboration",
+      "Technical Communication",
+      "Leadership",
+      "Adaptability"
+    ]
   }
 ];
 
