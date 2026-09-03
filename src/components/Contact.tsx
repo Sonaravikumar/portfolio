@@ -7,18 +7,22 @@ function Contact() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const form = e.currentTarget;
         setStatus("sending");
         try {
             await emailjs.sendForm(
-                "YOUR_SERVICE_ID",
-                "YOUR_TEMPLATE_ID",
-                e.currentTarget,
-                "YOUR_PUBLIC_KEY"
+                import.meta.env.VITE_EMAILJS_SERVICE_ID,
+                import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+                form,
+                {
+                    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
+                }
             );
             setStatus("sent");
-            e.currentTarget.reset();
+            form.reset();
             setTimeout(() => setStatus("idle"), 3000);
-        } catch {
+        } catch (error) {
+            console.error("EmailJS Error:", error);
             setStatus("error");
             setTimeout(() => setStatus("idle"), 3000);
         }
