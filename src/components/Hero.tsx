@@ -1,7 +1,60 @@
+import { useState, useEffect } from "react";
 import { profile } from "../data/portfolio";
 import { FiDownload, FiArrowUpRight  } from "react-icons/fi";
 
+const codeLines = [
+  { num: 1, text: 'const developer = {', tokens: [{ text: 'const ', cls: 'code-keyword' }, { text: 'developer ', cls: 'code-variable' }, { text: '= {', cls: 'code-punctuation' }] },
+  { num: 2, text: '  name: "Sona Pandi",', tokens: [{ text: '  name: ', cls: 'code-key' }, { text: '"Sona Pandi"', cls: 'code-string' }, { text: ',', cls: 'code-punctuation' }] },
+  { num: 3, text: '  role: "AI & Backend Engineer",', tokens: [{ text: '  role: ', cls: 'code-key' }, { text: '"AI & Backend Engineer"', cls: 'code-string' }, { text: ',', cls: 'code-punctuation' }] },
+  { num: 4, text: '  skills: ["Node.js", "TypeScript", "MongoDB"],', tokens: [{ text: '  skills: [', cls: 'code-key' }, { text: '"Node.js", "TypeScript", "MongoDB"', cls: 'code-string' }, { text: '],', cls: 'code-punctuation' }] },
+  { num: 5, text: '  passion: "Scalable Backend Systems"', tokens: [{ text: '  passion: ', cls: 'code-key' }, { text: '"Scalable Backend Systems"', cls: 'code-string' }] },
+  { num: 6, text: '};', tokens: [{ text: '};', cls: 'code-punctuation' }] },
+];
+
 function Hero() {
+  const [activeLine, setActiveLine] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+
+  useEffect(() => {
+    if (activeLine < codeLines.length) {
+      const currentLineText = codeLines[activeLine].text;
+      if (charIndex < currentLineText.length) {
+        const timer = setTimeout(() => {
+          setCharIndex((prev) => prev + 1);
+        }, 35);
+        return () => clearTimeout(timer);
+      } else {
+        const timer = setTimeout(() => {
+          setActiveLine((prev) => prev + 1);
+          setCharIndex(0);
+        }, 250);
+        return () => clearTimeout(timer);
+      }
+    } else {
+      const resetTimer = setTimeout(() => {
+        setActiveLine(0);
+        setCharIndex(0);
+      }, 6000);
+      return () => clearTimeout(resetTimer);
+    }
+  }, [activeLine, charIndex]);
+
+  const renderLineContent = (lineObj: typeof codeLines[0], isCurrent: boolean) => {
+    if (!isCurrent) {
+      return lineObj.tokens.map((tok, i) => (
+        <span key={i} className={tok.cls}>{tok.text}</span>
+      ));
+    }
+
+    const textToRender = lineObj.text.slice(0, charIndex);
+    return (
+      <>
+        <span className="code-variable">{textToRender}</span>
+        <span className="typewriter-cursor">|</span>
+      </>
+    );
+  };
+
   return (
     <section className="hero">
       <div className="hero-content">
@@ -76,27 +129,29 @@ function Hero() {
       <div className="hero-visual">
         <div className="hero-visual-card">
           <div className="visual-header">
-            <span className="visual-dot"></span>
-            <span className="visual-dot"></span>
-            <span className="visual-dot"></span>
+            <div className="visual-dots">
+              <span className="visual-dot"></span>
+              <span className="visual-dot"></span>
+              <span className="visual-dot"></span>
+            </div>
+            <div className="visual-filename">
+              <span className="ts-icon">TS</span> developer.ts
+            </div>
           </div>
 
-          <div className="visual-code">
-            <p><span>const</span> developer = {"{"}</p>
-            <p>&nbsp;&nbsp;name: <span>"{profile.name}"</span>,</p>
-            <p>&nbsp;&nbsp;role: <span>"{profile.role}"</span>,</p>
-            <p>
-              &nbsp;&nbsp;skills: [
-              <span>"Node.js"</span>,
-              <span>"TypeScript"</span>,
-              <span>"MongoDB"</span>
-              ],
-            </p>
-            <p>
-              &nbsp;&nbsp;passion:
-              <span>"Scalable Backend Systems"</span>
-            </p>
-            <p>{"};"}</p>
+          <div className="visual-code-body">
+            {codeLines.map((lineObj, idx) => {
+              if (idx > activeLine) return null;
+              const isCurrent = idx === activeLine;
+              return (
+                <div key={lineObj.num} className="code-line">
+                  <span className="code-line-num">{lineObj.num}</span>
+                  <div className="code-text-content">
+                    {renderLineContent(lineObj, isCurrent)}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
