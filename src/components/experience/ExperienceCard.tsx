@@ -71,12 +71,14 @@ function ExperienceCard({ experience }: ExperienceCardProps) {
 
         <div className="experience-skills-section">
           <div className="experience-skills-title">Technologies & Architecture</div>
-          <div className="experience-skills-list">
-            {experience.skills.map((skill) => (
-              <span key={skill} className="experience-skill-tag">
-                {skill}
-              </span>
-            ))}
+          <div className="experience-skills-marquee">
+            <div className="experience-skills-track">
+              {[...experience.skills, ...experience.skills, ...experience.skills, ...experience.skills].map((skill, index) => (
+                <span key={`${skill}-${index}`} className="experience-skill-tag">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>

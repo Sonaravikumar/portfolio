@@ -1176,6 +1176,7 @@ section:not(.hero) {
 .experience-skills-section {
   padding-top: 16px;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden;
 }
 
 .experience-skills-title {
@@ -1187,17 +1188,44 @@ section:not(.hero) {
   margin-bottom: 10px;
 }
 
-.experience-skills-list {
+.experience-skills-marquee {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 4%, black 96%, transparent 100%);
+  padding: 4px 0;
+}
+
+.experience-skills-track {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  width: max-content;
+  animation: marqueeSkills 22s linear infinite;
+  white-space: nowrap;
+}
+
+.experience-skills-marquee:hover .experience-skills-track {
+  animation-play-state: paused;
+}
+
+@keyframes marqueeSkills {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
 }
 
 .experience-skill-tag {
+  display: inline-block;
+  white-space: nowrap;
+  flex-shrink: 0;
   background: rgba(56, 189, 248, 0.06);
   color: var(--text-main);
   border: 1px solid rgba(56, 189, 248, 0.18);
-  padding: 5px 12px;
+  padding: 5px 14px;
   border-radius: 6px;
   font-size: 12px;
   font-weight: 500;
@@ -1205,10 +1233,11 @@ section:not(.hero) {
 }
 
 .experience-skill-tag:hover {
-  background: rgba(56, 189, 248, 0.15);
+  background: rgba(56, 189, 248, 0.18);
   color: var(--primary);
   border-color: var(--primary);
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
 }
 
 /* Projects Section */
