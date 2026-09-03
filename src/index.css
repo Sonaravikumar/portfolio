@@ -184,9 +184,10 @@ section:not(.hero) {
   grid-template-columns: 1.2fr 0.8fr;
 
   align-items: center;
+  align-content: center;
   gap: 60px;
 
-  padding: var(--section-spacing) var(--hero-padding-x);
+  padding: 100px var(--hero-padding-x);
 
   position: relative;
 }
@@ -3369,26 +3370,100 @@ section:not(.hero) {
   }
 }
 
-/* 4K & Ultra-wide Screens */
+/* 4K & Ultra-wide Screens (≥2560px) — Balanced 4K Layout */
 @media (min-width: 2560px) {
+  :root {
+    --section-spacing: 90px;
+    --section-padding-x: 60px;
+    --hero-padding-x: 60px;
+  }
+
+  /* Centered ultra-wide container bound (1800px max width for 4K) */
+  section:not(.hero),
+  .hero,
   .container {
-    max-width: 2200px;
-    width: calc(100% - 160px);
+    max-width: 1800px !important;
+    width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding-left: 60px !important;
+    padding-right: 60px !important;
+  }
+
+  .navbar {
+    padding: 20px 80px;
+    max-width: 100%;
+  }
+
+  /* Hero section compact height & proportions for 4K */
+  .hero {
+    min-height: auto !important;
+    padding-top: 130px !important;
+    padding-bottom: 70px !important;
+    grid-template-columns: 1.1fr 0.9fr !important;
+    gap: 60px !important;
+    align-items: center !important;
+    align-content: center !important;
   }
 
   .hero-content {
-    gap: 220px;
+    max-width: 900px;
   }
 
-  .section-title {
-    font-size: 3.5rem;
+  .hero-visual-card {
+    max-width: 520px !important;
+    padding: 36px !important;
   }
 
   .hero-name {
-    font-size: 5rem;
+    font-size: 4.5rem;
+  }
+
+  .hero-title {
+    font-size: 2.2rem;
   }
 
   .hero-subtitle {
-    font-size: 2rem;
+    font-size: 1.6rem;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    max-width: 800px !important;
+  }
+
+  .section-title {
+    font-size: 2.8rem;
+  }
+
+  .section-subtitle,
+  .contact-subtitle {
+    max-width: 900px !important;
+    font-size: 1.2rem;
+  }
+
+  .about-image img {
+    max-width: 550px;
+  }
+
+  /* Grids tuned for 1800px bounds on 4K */
+  .projects-container {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+
+  .skills-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .certifications-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
   }
 }
