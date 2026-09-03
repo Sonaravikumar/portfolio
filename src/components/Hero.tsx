@@ -33,8 +33,8 @@ function Hero() {
             Build Together <FiArrowUpRight />
           </a>
           <a
-            href="/Sonapandi_Resume.pdf"
-            download="Sonapandi_Resume.pdf"
+            href="/Sona_pandi-Resume.pdf"
+            download="Sona_pandi-Resume.pdf"
             className="hero-btn-secondary"
           >
             <FiDownload /> Grab My CV
