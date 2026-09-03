@@ -33,17 +33,20 @@ export const skillCategories = [
       "RESTful APIs",
       "RabbitMQ (Queues)",
       "Rate Limiting",
-      "Webhooks & Events"
+      "Webhooks & Events",
+      "JWT Authentication & RBAC",
+      "Event-Driven Architecture",
     ]
   },
   {
-    title: "Languages",
-    description: "Core programming & query languages",
+    title: "AI & Integrations",
+    description: "AI services, automation & third-party integrations",
     skills: [
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "PostgreSQL",
-      "HTML5 / CSS3"
+      "OpenAI API",
+      "Prompt Engineering",
+      "WhatsApp Cloud API",
+      "Razorpay Gateway",
+      "Email Automation"
     ]
   },
   {
@@ -56,13 +59,13 @@ export const skillCategories = [
     ]
   },
   {
-    title: "AI & Integrations",
-    description: "Third-party APIs & intelligent workflows",
+    title: "Languages",
+    description: "Programming languages & web fundamentals",
     skills: [
-      "OpenAI API",
-      "WhatsApp Cloud API",
-      "Razorpay Gateway",
-      "Email Automation"
+      "JavaScript (ES6+)",
+      "TypeScript",
+      "HTML5",
+      "CSS3"
     ]
   },
   {
@@ -82,20 +85,19 @@ export const skillCategories = [
       "Git & GitHub",
       "Postman",
       "VS Code",
+      "Antigravity IDE",
       "Render / Netlify"
     ]
   },
   {
-    title: "Soft Skills",
-    description: "Leadership, collaboration & engineering mindset",
+    title: "Backend Concepts",
     skills: [
-      "Problem Solving",
-      "Project Planning",
-      "Analytical Thinking",
-      "Team Collaboration",
-      "Technical Communication",
-      "Leadership",
-      "Adaptability"
+      "Authentication & Authorization",
+      "Caching",
+      "Background Jobs",
+      "System Design",
+      "API Security",
+      "Database Optimization"
     ]
   }
 ];
@@ -109,12 +111,12 @@ export const experiences: import("../types/portfolio").Experience[] = [
     duration: "Jan 2025 - Present",
     isCurrent: true,
     description: [
-      "Engineered and maintained high-throughput REST APIs using Node.js, Express.js, and MongoDB with JWT authentication, RBAC authorization, and optimized compound indexing.",
-      "Architected rate-limited request throttling systems to safeguard backend microservices against traffic surges and malicious abuse.",
-      "Designed and deployed asynchronous task queue workers using RabbitMQ for high-volume WhatsApp broadcast campaigns and background event processing.",
-      "Integrated OpenAI GPT-4 API, Razorpay Payment Gateway, and Meta WhatsApp Cloud API with HMAC-SHA256 webhook signature validation and real-time event streaming.",
-      "Built automated keyword chatbot workflows and drip marketing engines supporting scheduled broadcast execution for thousands of users.",
-      "Monitored production services, debugged runtime bottlenecks, and reduced API response latencies."
+      "Developed and maintained scalable REST APIs using Node.js, Express.js, and MongoDB with authentication and role-based access control.",
+      "Built rate-limited API architectures to improve security and traffic management.",
+      "Implemented asynchronous background job processing using RabbitMQ.",
+      "Integrated OpenAI API, Meta WhatsApp Cloud API, and Razorpay payment gateway.",
+      "Developed automation workflows including keyword-based messaging, broadcast campaigns, and scheduled notifications.",
+      "Debugged production issues and improved system reliability and performance."
     ],
     skills: [
       "Node.js",
@@ -131,7 +133,7 @@ export const experiences: import("../types/portfolio").Experience[] = [
   },
   {
     role: "Web Development Intern",
-    company: "Masfob @ Success Life Mantra",
+    company: "Zevotria",
     location: "Madurai, India",
     type: "Internship",
     duration: "Aug 2024 - Dec 2024",
@@ -175,6 +177,28 @@ export const experiences: import("../types/portfolio").Experience[] = [
 
 export const projects: import("../types/portfolio").Project[] = [
   {
+    title: "Kelly Gang",
+    category: "AI Movie Production Platform",
+    tagline: "Transforming ideas into complete cinematic productions using AI-powered script, storyboard, asset, and video generation workflows.",
+    status: "In Development",
+    description: [
+      "Architecting a full-stack AI movie production platform capable of generating scripts, scenes, storyboards, characters, props, worlds, and production assets from natural language prompts.",
+      "Designed backend orchestration workflows for scene management, asset generation, storyboard creation, and production pipeline automation using scalable Node.js services.",
+      "Integrating large language models, image generation models, and video generation services to create an end-to-end AI-assisted filmmaking ecosystem."
+    ],
+    technologies: [
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "OpenAI API",
+      "Seedance AI",
+      "Image Generation",
+      "Video Generation",
+      "REST APIs"
+    ],
+    architectureId: "kellygang"
+  },
+  {
     title: "CareerPro AI",
     category: "AI Platform & Career Engine",
     tagline: "Multimodal AI career platform for ATS resume generation, LinkedIn optimization & interview simulation.",
@@ -192,7 +216,6 @@ export const projects: import("../types/portfolio").Project[] = [
       "React.js",
       "RESTful APIs"
     ],
-    liveDemo: "https://careerpro-ai.com",
     architectureId: "careerpro"
   },
   {
@@ -213,7 +236,6 @@ export const projects: import("../types/portfolio").Project[] = [
       "RabbitMQ",
       "Redis"
     ],
-    liveDemo: "https://inderact.masfob.com",
     architectureId: "inderact"
   },
   {
@@ -262,67 +284,73 @@ export const projects: import("../types/portfolio").Project[] = [
 
 export const architectures: import("../types/portfolio").Architecture[] = [
   {
-    id: "inderact",
-    title: "Inderact - WhatsApp Cloud Automation",
-    tagline: "Event-Driven Webhook Ingestion & Asynchronous Message Queue Pipeline",
-    category: "Asynchronous & Event-Driven",
+    id: "kellygang",
+    title: "Kelly Gang - AI Movie Production Platform",
+    tagline:
+      "Multi-Agent AI Pipeline for Script Generation, Storyboarding, Asset Creation & Video Production",
+    category: "Generative AI & Content Orchestration",
     overview:
-      "Ingests high-frequency WhatsApp Cloud API webhooks with HMAC-SHA256 signature verification, decouples traffic spikes through RabbitMQ message queues, and orchestrates keyword-based automated bot responses and scheduled broadcast drip campaigns with rate limiting.",
+      "An AI-powered movie production platform that transforms user ideas into complete cinematic productions through automated script generation, scene planning, storyboard creation, character design, asset generation, and AI-driven video workflows.",
     highlights: [
-      "Meta Webhook Ingestion",
-      "RabbitMQ AMQP Queue",
-      "Rate-Limited Outbound",
-      "Redis Session Caching",
-      "MongoDB Event Logs"
+      "Script Generation Engine",
+      "Scene & Shot Orchestration",
+      "Storyboard Automation",
+      "AI Asset Generation",
+      "Video Production Pipeline"
     ],
     decisions: [
-      "Decoupled Webhook Ingestion: Used RabbitMQ queues to immediately acknowledge incoming Meta webhooks (<50ms) and process business logic asynchronously, preventing HTTP timeout dropped events.",
-      "Strict Rate-Limiting Engine: Built token-bucket rate limiters on outbound broadcast messages to stay compliant with Meta Cloud API Tier-1 throughput constraints.",
-      "Stateful Conversation Caching: Stored user conversational context in Redis to enable sub-millisecond keyword auto-reply lookups without hammering the primary database."
+      "Modular Production Workflow: Split script generation, scene management, storyboard generation, asset creation, and video production into independent services to improve scalability and maintainability.",
+      "Centralized Asset Management: Designed a shared asset repository for characters, props, locations, worlds, and generated media to ensure consistency throughout production stages.",
+      "Multi-Model AI Orchestration: Integrated LLMs, image generation models, and video generation services through structured pipelines to automate end-to-end filmmaking workflows."
     ],
     nodes: [
       {
-        layer: "Client & Ingress",
-        name: "WhatsApp User / Flutter Dashboard",
+        layer: "Creator Studio",
+        name: "Movie Creation Dashboard",
         type: "client",
-        protocol: "HTTPS / Mobile",
-        detail: "Users send inbound chats; managers schedule campaigns from Flutter dashboard."
+        protocol: "HTTPS / SPA",
+        detail:
+          "Allows creators to generate scripts, manage scenes, create storyboards, organize assets, and monitor production workflows."
       },
       {
-        layer: "Security & Ingestion",
-        name: "Meta Cloud API & Webhook Gate",
-        type: "gateway",
-        protocol: "HTTPS Webhooks",
-        detail: "Verifies HMAC-SHA256 signature and authenticates webhook payload origins."
-      },
-      {
-        layer: "Core API Server",
-        name: "Node.js & Express REST Core",
+        layer: "Backend Orchestration",
+        name: "Node.js & Express Workflow Engine",
         type: "backend",
-        protocol: "REST & JSON",
-        detail: "Parses message payloads, applies JWT authorization & routes to workflow handlers."
+        protocol: "RESTful API",
+        detail:
+          "Coordinates projects, scripts, scenes, shots, assets, authentication, workflow execution, and generation requests."
       },
       {
-        layer: "Message Broker",
-        name: "RabbitMQ Task Queue Cluster",
-        type: "queue",
-        protocol: "AMQP Protocol",
-        detail: "Buffers bursts, manages broadcast queues & distributes background worker tasks."
+        layer: "AI Content Generation",
+        name: "LLM & Prompt Orchestration Engine",
+        type: "ai",
+        protocol: "HTTPS / REST",
+        detail:
+          "Generates scripts, scene descriptions, shot breakdowns, storyboard prompts, characters, props, and world-building content."
       },
       {
-        layer: "Persistence & Cache",
-        name: "MongoDB & Redis Cluster",
+        layer: "Media Generation",
+        name: "Image & Video Generation Services",
+        type: "integration",
+        protocol: "REST APIs",
+        detail:
+          "Creates storyboards, concept art, cinematic frames, character visuals, and AI-generated video sequences."
+      },
+      {
+        layer: "Asset Management",
+        name: "MongoDB Media & Production Store",
         type: "database",
-        protocol: "Mongoose / TCP",
-        detail: "Persists conversation history, broadcast analytics & cached session states."
+        protocol: "Mongoose ODM",
+        detail:
+          "Stores movie projects, scripts, scenes, shots, generated assets, storyboard data, metadata, and production history."
       }
     ],
     flow: [
-      "WhatsApp / Flutter App",
-      "Meta Cloud Webhook Gate",
-      "Node.js & Express REST Core",
-      "RabbitMQ Task Queue",
-      "MongoDB & Redis Cluster"
+      "Movie Creation Dashboard",
+      "Node.js & Express Workflow Engine",
+      "LLM & Prompt Orchestration Engine",
+      "Image & Video Generation Services",
+      "MongoDB Media & Production Store"
     ]
   },
   {
@@ -387,6 +415,70 @@ export const architectures: import("../types/portfolio").Architecture[] = [
       "OpenAI GPT-4 API Service",
       "Automated Email Service",
       "MongoDB Atlas Database"
+    ]
+  },
+  {
+    id: "inderact",
+    title: "Inderact - WhatsApp Cloud Automation",
+    tagline: "Event-Driven Webhook Ingestion & Asynchronous Message Queue Pipeline",
+    category: "Asynchronous & Event-Driven",
+    overview:
+      "Ingests high-frequency WhatsApp Cloud API webhooks with HMAC-SHA256 signature verification, decouples traffic spikes through RabbitMQ message queues, and orchestrates keyword-based automated bot responses and scheduled broadcast drip campaigns with rate limiting.",
+    highlights: [
+      "Meta Webhook Ingestion",
+      "RabbitMQ AMQP Queue",
+      "Rate-Limited Outbound",
+      "Redis Session Caching",
+      "MongoDB Event Logs"
+    ],
+    decisions: [
+      "Decoupled Webhook Ingestion: Used RabbitMQ queues to immediately acknowledge incoming Meta webhooks (<50ms) and process business logic asynchronously, preventing HTTP timeout dropped events.",
+      "Strict Rate-Limiting Engine: Built token-bucket rate limiters on outbound broadcast messages to stay compliant with Meta Cloud API Tier-1 throughput constraints.",
+      "Stateful Conversation Caching: Stored user conversational context in Redis to enable sub-millisecond keyword auto-reply lookups without hammering the primary database."
+    ],
+    nodes: [
+      {
+        layer: "Client & Ingress",
+        name: "WhatsApp User / Flutter Dashboard",
+        type: "client",
+        protocol: "HTTPS / Mobile",
+        detail: "Users send inbound chats; managers schedule campaigns from Flutter dashboard."
+      },
+      {
+        layer: "Security & Ingestion",
+        name: "Meta Cloud API & Webhook Gate",
+        type: "gateway",
+        protocol: "HTTPS Webhooks",
+        detail: "Verifies HMAC-SHA256 signature and authenticates webhook payload origins."
+      },
+      {
+        layer: "Core API Server",
+        name: "Node.js & Express REST Core",
+        type: "backend",
+        protocol: "REST & JSON",
+        detail: "Parses message payloads, applies JWT authorization & routes to workflow handlers."
+      },
+      {
+        layer: "Message Broker",
+        name: "RabbitMQ Task Queue Cluster",
+        type: "queue",
+        protocol: "AMQP Protocol",
+        detail: "Buffers bursts, manages broadcast queues & distributes background worker tasks."
+      },
+      {
+        layer: "Persistence & Cache",
+        name: "MongoDB & Redis Cluster",
+        type: "database",
+        protocol: "Mongoose / TCP",
+        detail: "Persists conversation history, broadcast analytics & cached session states."
+      }
+    ],
+    flow: [
+      "WhatsApp / Flutter App",
+      "Meta Cloud Webhook Gate",
+      "Node.js & Express REST Core",
+      "RabbitMQ Task Queue",
+      "MongoDB & Redis Cluster"
     ]
   },
   {
