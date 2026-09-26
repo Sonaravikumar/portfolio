@@ -1,6 +1,6 @@
 export const profile = {
   name: "Sona Pandi",
-  role: "AI & Backend Engineer",
+  role: "AI & Backend Developer",
   tagline:
     "Building scalable backend systems, intelligent automation, and AI-powered applications.",
 
@@ -9,7 +9,7 @@ export const profile = {
 
   about: {
     intro:
-      "AI & Backend Engineer specializing in scalable backend architectures, intelligent automation, and AI-powered products.",
+      "AI & Backend Developer specializing in scalable backend architectures, intelligent automation, and AI-powered products.",
 
     highlights: [
       "Build high-performance APIs with Node.js & Express.js",
@@ -43,8 +43,11 @@ export const skillCategories = [
     description: "AI services, automation & third-party integrations",
     skills: [
       "OpenAI API",
+      "BytePlus Seedance 2.5",
+      "ElevenLabs",
+      "Claid AI",
       "Prompt Engineering",
-      "WhatsApp Cloud API",
+      "Meta WhatsApp Cloud API",
       "Razorpay Gateway",
       "Email Automation"
     ]
@@ -114,7 +117,7 @@ export const experiences: import("../types/portfolio").Experience[] = [
       "Developed and maintained scalable REST APIs using Node.js, Express.js, and MongoDB with authentication and role-based access control.",
       "Built rate-limited API architectures to improve security and traffic management.",
       "Implemented asynchronous background job processing using RabbitMQ.",
-      "Integrated OpenAI API, Meta WhatsApp Cloud API, and Razorpay payment gateway.",
+      "Integrated OpenAI API, ElevenLabs, BytePlus Seedance 2.5, Meta WhatsApp Cloud API, and Razorpay payment gateway.",
       "Developed automation workflows including keyword-based messaging, broadcast campaigns, and scheduled notifications.",
       "Debugged production issues and improved system reliability and performance."
     ],
@@ -126,7 +129,10 @@ export const experiences: import("../types/portfolio").Experience[] = [
       "Redis",
       "Rate Limiting",
       "OpenAI API",
-      "WhatsApp Cloud API",
+      "BytePlus Seedance 2.5",
+      "ElevenLabs",
+      "Claid AI",
+      "Meta WhatsApp Cloud API",
       "Razorpay",
       "REST APIs"
     ]
@@ -182,18 +188,19 @@ export const projects: import("../types/portfolio").Project[] = [
     tagline: "Transforming ideas into complete cinematic productions using AI-powered script, storyboard, asset, and video generation workflows.",
     status: "In Development",
     description: [
-      "Architecting a full-stack AI movie production platform capable of generating scripts, scenes, storyboards, characters, props, worlds, and production assets from natural language prompts.",
+      "Architecting a full-stack AI movie production platform capable of generating scripts, scenes, shots, storyboards, characters, props, worlds, sound, and production assets from natural language prompts.",
       "Designed backend orchestration workflows for scene management, asset generation, storyboard creation, and production pipeline automation using scalable Node.js services.",
-      "Integrating large language models, image generation models, and video generation services to create an end-to-end AI-assisted filmmaking ecosystem."
+      "Integrating large language models, image generation models, audio generation models, voice cloning models and video generation services to create an end-to-end AI-assisted filmmaking ecosystem."
     ],
     technologies: [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "OpenAI API",
-      "Seedance AI",
-      "Image Generation",
-      "Video Generation",
+      "OpenAI API - Text & Image Generation",
+      "BytePlus Seedance 2.5 - Video Generation",
+      "Claid AI - Image Generation",
+      "ElevenLabs - Voice Cloning",
+      "Meta WhatsApp Cloud API",
       "REST APIs"
     ],
     architectureId: "kellygang"
@@ -296,11 +303,13 @@ export const architectures: import("../types/portfolio").Architecture[] = [
       "Scene & Shot Orchestration",
       "Storyboard Automation",
       "AI Asset Generation",
-      "Video Production Pipeline"
+      "AI Voice Cloning",
+      "AI Video Generation"
     ],
     decisions: [
-      "Modular Production Workflow: Split script generation, scene management, storyboard generation, asset creation, and video production into independent services to improve scalability and maintainability.",
+      "Modular Production Workflow: Split script generation, scene management, storyboard generation, asset creation, voice cloning, and video production into independent services to improve scalability and maintainability.",
       "Centralized Asset Management: Designed a shared asset repository for characters, props, locations, worlds, and generated media to ensure consistency throughout production stages.",
+      "Centerlized Audio Management: Designed a shared audio repository for voice cloning, sound effects, and music to ensure consistency throughout production stages.",
       "Multi-Model AI Orchestration: Integrated LLMs, image generation models, and video generation services through structured pipelines to automate end-to-end filmmaking workflows."
     ],
     nodes: [
@@ -310,7 +319,7 @@ export const architectures: import("../types/portfolio").Architecture[] = [
         type: "client",
         protocol: "HTTPS / SPA",
         detail:
-          "Allows creators to generate scripts, manage scenes, create storyboards, organize assets, and monitor production workflows."
+          "Allows creators to generate scripts, manage scenes & shots, create storyboards, generate voice & characters, generate assets, and monitor production workflows."
       },
       {
         layer: "Backend Orchestration",
@@ -318,7 +327,7 @@ export const architectures: import("../types/portfolio").Architecture[] = [
         type: "backend",
         protocol: "RESTful API",
         detail:
-          "Coordinates projects, scripts, scenes, shots, assets, authentication, workflow execution, and generation requests."
+          "Coordinates projects, scripts, scenes, shots, assets, audio, authentication, workflow execution, and generation requests."
       },
       {
         layer: "AI Content Generation",
@@ -330,11 +339,11 @@ export const architectures: import("../types/portfolio").Architecture[] = [
       },
       {
         layer: "Media Generation",
-        name: "Image & Video Generation Services",
+        name: "Image, Audio & Video Generation Services",
         type: "integration",
         protocol: "REST APIs",
         detail:
-          "Creates storyboards, concept art, cinematic frames, character visuals, and AI-generated video sequences."
+          "Creates storyboards, concept art, cinematic frames, character visuals, voice cloning, and AI-generated video sequences."
       },
       {
         layer: "Asset Management",
@@ -342,14 +351,14 @@ export const architectures: import("../types/portfolio").Architecture[] = [
         type: "database",
         protocol: "Mongoose ODM",
         detail:
-          "Stores movie projects, scripts, scenes, shots, generated assets, storyboard data, metadata, and production history."
+          "Stores movie projects, scripts, scenes, shots, generated assets, generated audio, storyboard data, metadata, and production history."
       }
     ],
     flow: [
       "Movie Creation Dashboard",
       "Node.js & Express Workflow Engine",
       "LLM & Prompt Orchestration Engine",
-      "Image & Video Generation Services",
+      "Image, Audio & Video Generation Services",
       "MongoDB Media & Production Store"
     ]
   },
