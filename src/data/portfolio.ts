@@ -13,7 +13,7 @@ export const profile = {
 
     highlights: [
       "Build high-performance APIs with Node.js & Express.js",
-      "Integrate AI models and third-party services",
+      "Integrate open-source models (Qwen), Claude MCP & ComfyUI workflows",
       "Design automation workflows and messaging systems",
       "Develop cloud-ready applications with MongoDB & PostgreSQL",
     ],
@@ -40,8 +40,12 @@ export const skillCategories = [
   },
   {
     title: "AI & Integrations",
-    description: "AI services, automation & third-party integrations",
+    description: "AI services, open-source models & agentic systems",
     skills: [
+      "Model Context Protocol (MCP)",
+      "ComfyUI (HDR & Upscaling)",
+      "Qwen (Open Source LLMs)",
+      "Claude API",
       "OpenAI API",
       "BytePlus Seedance 2.5",
       "ElevenLabs",
@@ -115,23 +119,29 @@ export const experiences: import("../types/portfolio").Experience[] = [
     isCurrent: true,
     description: [
       "Developed and maintained scalable REST APIs using Node.js, Express.js, and MongoDB with authentication and role-based access control.",
-      "Built rate-limited API architectures to improve security and traffic management.",
-      "Implemented asynchronous background job processing using RabbitMQ.",
-      "Integrated OpenAI API, ElevenLabs, BytePlus Seedance 2.5, Meta WhatsApp Cloud API, and Razorpay payment gateway.",
+      "Integrated open-source Qwen LLMs alongside commercial AI APIs to optimize inference costs and power script and scene generation pipelines.",
+      "Engineered automated ComfyUI node workflows with latent HDR upscaling for high-resolution visual and cinematic storyboard rendering.",
+      "Built custom Model Context Protocol (MCP) servers to interface Claude with internal databases, tools, and production workflows.",
+      "Implemented asynchronous background job processing and distributed task queues using RabbitMQ.",
+      "Integrated AI and third-party services including ElevenLabs voice cloning, BytePlus Seedance 2.5, Meta WhatsApp Cloud API, and Razorpay.",
       "Developed automation workflows including keyword-based messaging, broadcast campaigns, and scheduled notifications.",
-      "Debugged production issues and improved system reliability and performance."
+      "Debugged production issues and improved system reliability, security, and performance."
     ],
     skills: [
       "Node.js",
       "Express.js",
       "MongoDB",
+      "Model Context Protocol (MCP)",
+      "ComfyUI",
+      "Qwen (Open Source)",
+      "Claude API",
+      "OpenAI API",
       "RabbitMQ",
       "Redis",
-      "Rate Limiting",
-      "OpenAI API",
       "BytePlus Seedance 2.5",
       "ElevenLabs",
       "Claid AI",
+      "Rate Limiting",
       "Meta WhatsApp Cloud API",
       "Razorpay",
       "REST APIs"
@@ -189,18 +199,23 @@ export const projects: import("../types/portfolio").Project[] = [
     status: "In Development",
     description: [
       "Architecting a full-stack AI movie production platform capable of generating scripts, scenes, shots, storyboards, characters, props, worlds, sound, and production assets from natural language prompts.",
-      "Designed backend orchestration workflows for scene management, asset generation, storyboard creation, and production pipeline automation using scalable Node.js services.",
-      "Integrating large language models, image generation models, audio generation models, voice cloning models and video generation services to create an end-to-end AI-assisted filmmaking ecosystem."
+      "Integrated open-source Qwen models alongside commercial LLMs for cost-effective script analysis, character reasoning, and scene prompt expansion.",
+      "Engineered automated ComfyUI workflows for HDR-resolution image upscaling, visual consistency, and cinematic storyboard rendering.",
+      "Implemented custom Model Context Protocol (MCP) servers with Claude to enable autonomous agentic tool calling, asset management, and workflow orchestration.",
+      "Designed backend orchestration workflows for scene management, asset generation, voice cloning, and production pipeline automation using scalable Node.js services."
     ],
     technologies: [
       "Node.js",
       "Express.js",
       "MongoDB",
-      "OpenAI API - Text & Image Generation",
-      "BytePlus Seedance 2.5 - Video Generation",
-      "Claid AI - Image Generation",
-      "ElevenLabs - Voice Cloning",
-      "Meta WhatsApp Cloud API",
+      "ComfyUI",
+      "Qwen (Open Source)",
+      "Claude & MCP",
+      "OpenAI API",
+      "BytePlus Seedance 2.5",
+      "Claid AI",
+      "ElevenLabs",
+      "HDR Upscaling",
       "REST APIs"
     ],
     architectureId: "kellygang"
@@ -299,18 +314,19 @@ export const architectures: import("../types/portfolio").Architecture[] = [
     overview:
       "An AI-powered movie production platform that transforms user ideas into complete cinematic productions through automated script generation, scene planning, storyboard creation, character design, asset generation, and AI-driven video workflows.",
     highlights: [
-      "Script Generation Engine",
-      "Scene & Shot Orchestration",
-      "Storyboard Automation",
-      "AI Asset Generation",
-      "AI Voice Cloning",
-      "AI Video Generation"
+      "Agentic Claude & MCP Tooling",
+      "Qwen Open-Source LLM Pipeline",
+      "ComfyUI HDR Frame Generation",
+      "Script & Storyboard Automation",
+      "AI Voice Cloning & Soundscapes",
+      "AI Video Production Pipeline"
     ],
     decisions: [
-      "Modular Production Workflow: Split script generation, scene management, storyboard generation, asset creation, voice cloning, and video production into independent services to improve scalability and maintainability.",
-      "Centralized Asset Management: Designed a shared asset repository for characters, props, locations, worlds, and generated media to ensure consistency throughout production stages.",
-      "Centerlized Audio Management: Designed a shared audio repository for voice cloning, sound effects, and music to ensure consistency throughout production stages.",
-      "Multi-Model AI Orchestration: Integrated LLMs, image generation models, and video generation services through structured pipelines to automate end-to-end filmmaking workflows."
+      "Agentic Tooling via Claude MCP: Deployed custom Model Context Protocol (MCP) servers allowing Claude to securely inspect project schemas, trigger workflows, and manage production assets.",
+      "Open-Source Inference with Qwen: Utilized Qwen open-source models alongside proprietary LLMs for cost-efficient script breakdown, character logic, and high-fidelity prompt generation.",
+      "ComfyUI Node Pipelines: Built dedicated ComfyUI worker workflows for multi-pass HDR upscaling and latent refinement, ensuring production-grade visual resolution.",
+      "Modular Production Workflow: Split script generation, scene management, storyboard generation, asset creation, voice cloning, and video production into independent services to improve scalability.",
+      "Centralized Asset & Audio Store: Designed shared repositories for characters, props, locations, voice clones, and generated media to ensure strict cinematic continuity across production stages."
     ],
     nodes: [
       {
@@ -322,6 +338,14 @@ export const architectures: import("../types/portfolio").Architecture[] = [
           "Allows creators to generate scripts, manage scenes & shots, create storyboards, generate voice & characters, generate assets, and monitor production workflows."
       },
       {
+        layer: "Agentic Orchestration",
+        name: "Claude & MCP Server Hub",
+        type: "ai",
+        protocol: "Model Context Protocol (MCP)",
+        detail:
+          "Coordinates tool-use agents for scene synthesis, schema validation, and intelligent workflow automation."
+      },
+      {
         layer: "Backend Orchestration",
         name: "Node.js & Express Workflow Engine",
         type: "backend",
@@ -331,19 +355,19 @@ export const architectures: import("../types/portfolio").Architecture[] = [
       },
       {
         layer: "AI Content Generation",
-        name: "LLM & Prompt Orchestration Engine",
+        name: "Qwen & LLM Orchestration Engine",
         type: "ai",
-        protocol: "HTTPS / REST",
+        protocol: "REST / Local Inference",
         detail:
-          "Generates scripts, scene descriptions, shot breakdowns, storyboard prompts, characters, props, and world-building content."
+          "Executes open-source Qwen models and commercial LLMs for script generation, shot breakdowns, and prompt engineering."
       },
       {
-        layer: "Media Generation",
-        name: "Image, Audio & Video Generation Services",
+        layer: "Media & Visual Generation",
+        name: "ComfyUI HDR & Media Services",
         type: "integration",
-        protocol: "REST APIs",
+        protocol: "REST / WebSockets",
         detail:
-          "Creates storyboards, concept art, cinematic frames, character visuals, voice cloning, and AI-generated video sequences."
+          "Executes ComfyUI node workflows for HDR image upscaling, visual consistency, voice cloning, and AI-generated video sequences."
       },
       {
         layer: "Asset Management",
@@ -356,9 +380,10 @@ export const architectures: import("../types/portfolio").Architecture[] = [
     ],
     flow: [
       "Movie Creation Dashboard",
+      "Claude & MCP Server Hub",
       "Node.js & Express Workflow Engine",
-      "LLM & Prompt Orchestration Engine",
-      "Image, Audio & Video Generation Services",
+      "Qwen & LLM Orchestration Engine",
+      "ComfyUI HDR & Media Services",
       "MongoDB Media & Production Store"
     ]
   },
