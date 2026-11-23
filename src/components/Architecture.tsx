@@ -147,7 +147,13 @@ function Architecture() {
         {/* Visual Data Flow Pipeline */}
         <div className="arch-pipeline-container">
           <div className="pipeline-title-row">
-            <span className="pipeline-title">⚡ End-to-End Request & Data Flow Pipeline</span>
+            <div className="pipeline-title-left">
+              <span className="pipeline-title">⚡ End-to-End Request & Data Flow Pipeline</span>
+              <div className="arch-cartoon-bot" aria-hidden="true">
+                <span className="arch-bot-avatar">🤖</span>
+                <span className="arch-bot-speech">Live Packet Stream!</span>
+              </div>
+            </div>
             <span className="pipeline-hint">Hover over steps for protocol details</span>
           </div>
 
@@ -176,7 +182,15 @@ function Architecture() {
                 </div>
 
                 {index !== activeArch.nodes.length - 1 && (
-                  <div className="arch-connector">
+                  <div className="arch-connector" aria-hidden="true">
+                    {/* Simple Cartoon Data Courier Hopping along line */}
+                    <div className="cartoon-connector-packet" title="Data Packet in Transit">
+                      <span className="packet-char">
+                        {index % 2 === 0 ? "📦" : "⚡"}
+                      </span>
+                      <span className="packet-dust">💨</span>
+                    </div>
+
                     <div className="connector-line">
                       <div className="connector-pulse"></div>
                     </div>

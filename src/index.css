@@ -2092,7 +2092,58 @@ section:not(.hero) {
   align-items: center;
   margin-bottom: 24px;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 12px;
+}
+
+.pipeline-title-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.arch-cartoon-bot {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  border-radius: 20px;
+  padding: 3px 10px;
+  animation: botHoverFloat 2s ease-in-out infinite;
+}
+
+@keyframes botHoverFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+
+.arch-bot-avatar {
+  font-size: 14px;
+  display: inline-block;
+  animation: botWink 3.2s infinite;
+}
+
+@keyframes botWink {
+  0%, 90%, 100% {
+    transform: scale(1);
+  }
+  95% {
+    transform: scale(1.25) rotate(-10deg);
+  }
+}
+
+.arch-bot-speech {
+  font-size: 10px;
+  font-weight: 700;
+  color: #38bdf8;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-family: monospace;
 }
 
 .pipeline-title {
@@ -2150,8 +2201,24 @@ section:not(.hero) {
 }
 
 .arch-node-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.45);
+}
+
+.arch-node-card:hover .arch-node-icon {
+  animation: nodeIconWiggle 0.5s ease-in-out;
+}
+
+@keyframes nodeIconWiggle {
+  0%, 100% {
+    transform: rotate(0deg) scale(1);
+  }
+  25% {
+    transform: rotate(-10deg) scale(1.15);
+  }
+  75% {
+    transform: rotate(10deg) scale(1.15);
+  }
 }
 
 /* Layer Badge Colors */
@@ -2318,7 +2385,7 @@ section:not(.hero) {
   line-height: 1.4;
 }
 
-/* Connectors with Animated Data Pulses */
+/* Connectors with Animated Data Pulses & Cartoon Data Packets */
 .arch-connector {
   display: flex;
   align-items: center;
@@ -2326,6 +2393,85 @@ section:not(.hero) {
   width: 36px;
   flex-shrink: 0;
   justify-content: center;
+}
+
+.cartoon-connector-packet {
+  position: absolute;
+  top: -16px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  user-select: none;
+  pointer-events: none;
+  animation: packetRunH 2.2s ease-in-out infinite;
+  z-index: 2;
+  white-space: nowrap;
+}
+
+.arch-node-wrapper:nth-child(1) .cartoon-connector-packet {
+  animation-delay: 0s;
+}
+
+.arch-node-wrapper:nth-child(2) .cartoon-connector-packet {
+  animation-delay: 0.45s;
+}
+
+.arch-node-wrapper:nth-child(3) .cartoon-connector-packet {
+  animation-delay: 0.9s;
+}
+
+.arch-node-wrapper:nth-child(4) .cartoon-connector-packet {
+  animation-delay: 1.35s;
+}
+
+.arch-node-wrapper:nth-child(5) .cartoon-connector-packet {
+  animation-delay: 1.8s;
+}
+
+@keyframes packetRunH {
+  0% {
+    left: -12px;
+    opacity: 0;
+    transform: translateY(0) scale(0.7);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+  }
+  50% {
+    transform: translateY(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-2px) scale(1.1);
+  }
+  100% {
+    left: 28px;
+    opacity: 0;
+    transform: translateY(0) scale(0.7);
+  }
+}
+
+.packet-char {
+  display: inline-block;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.6));
+  animation: packetBob 0.5s ease-in-out infinite alternate;
+}
+
+@keyframes packetBob {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+.packet-dust {
+  font-size: 10px;
+  opacity: 0.8;
+  margin-left: -2px;
 }
 
 .connector-line {
@@ -3546,6 +3692,33 @@ section:not(.hero) {
     width: 2px;
     height: 30px;
     margin: 8px 0;
+  }
+
+  .cartoon-connector-packet {
+    top: 0;
+    left: 10px;
+    animation: packetRunV 2.2s ease-in-out infinite;
+  }
+
+  @keyframes packetRunV {
+    0% {
+      top: -8px;
+      opacity: 0;
+      transform: scale(0.7);
+    }
+    20% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    80% {
+      opacity: 1;
+      transform: scale(1.1);
+    }
+    100% {
+      top: 22px;
+      opacity: 0;
+      transform: scale(0.7);
+    }
   }
 
   .connector-line {
