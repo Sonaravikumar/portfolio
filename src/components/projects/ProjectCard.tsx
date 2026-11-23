@@ -1,4 +1,5 @@
 import type { Project } from "../../types/portfolio";
+import ProjectCartoonMascot from "./ProjectCartoonMascot";
 
 interface ProjectCardProps {
   project: Project;
@@ -10,6 +11,11 @@ function ProjectCard({ project }: ProjectCardProps) {
       <div className="project-card-glow"></div>
 
       <div className="project-card-inner">
+        {/* Animated Cartoon Project Mascot Header */}
+        <div className="project-cartoon-mascot-container">
+          <ProjectCartoonMascot architectureId={project.architectureId} title={project.title} />
+        </div>
+
         {/* Top Meta Bar */}
         <div className="project-meta-bar">
           {project.category && (

@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { projects } from "../../data/portfolio";
 import ProjectCard from "./ProjectCard";
+import ProjectDispatcher from "./ProjectDispatcher";
+import "./ProjectsCartoon.css";
 
 const filterCategories = [
   "All Projects",
-  "AI & Automation",
-  "Backend & APIs",
-  "Full-Stack Web App"
+  "AI & Automation"
 ];
 
 function Projects() {
@@ -17,21 +17,10 @@ function Projects() {
     if (activeFilter === "AI & Automation") {
       return (
         project.category?.includes("AI") ||
-        project.technologies.includes("OpenAI API")
-      );
-    }
-    if (activeFilter === "Backend & APIs") {
-      return (
-        project.category?.includes("Backend") ||
-        project.category?.includes("Messaging") ||
-        project.technologies.includes("RabbitMQ")
-      );
-    }
-    if (activeFilter === "Full-Stack Web App") {
-      return (
-        project.category?.includes("Full-Stack") ||
-        project.technologies.includes("GrapesJS") ||
-        project.technologies.includes("React.js")
+        project.technologies.includes("OpenAI API") ||
+        project.technologies.includes("ComfyUI") ||
+        project.technologies.includes("Qwen (Open Source)") ||
+        project.technologies.includes("Claude & MCP")
       );
     }
     return true;
@@ -46,18 +35,12 @@ function Projects() {
         Production applications, backend services, and scalable API platforms I've engineered from scratch.
       </p>
 
-      {/* Project Filter Tabs */}
-      <div className="project-filters">
-        {filterCategories.map((category) => (
-          <button
-            key={category}
-            className={`project-filter-btn ${activeFilter === category ? "active" : ""}`}
-            onClick={() => setActiveFilter(category)}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
+      {/* Cartoon Project Command Lab & Dispatcher */}
+      <ProjectDispatcher
+        activeFilter={activeFilter}
+        onFilterChange={setActiveFilter}
+        categories={filterCategories}
+      />
 
       <div className="projects-container">
         {filteredProjects.map((project) => (
