@@ -163,7 +163,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 14px 22px;
-  margin-bottom: 50px; /* Generous breathing room below HUD */
+  margin-bottom: 75px; /* Ample breathing room guarantees speech bubble never overlaps HUD */
   backdrop-filter: blur(12px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
@@ -285,14 +285,14 @@
 .roadmap-path-container {
   position: relative;
   width: 100%;
-  padding: 260px 10px 40px; /* Generous 260px headroom guarantees speech bubble never touches the HUD */
+  padding: 280px 10px 40px; /* Headroom prevents any bubble clipping */
   margin-bottom: 24px;
 }
 
 /* Cartoon Girl Walker on the Road */
 .cartoon-girl-walker {
   position: absolute;
-  top: 185px; /* Steps right along the road track line */
+  top: 200px; /* Steps right along the road track line */
   transform: translateX(-50%);
   transition: left 1.1s cubic-bezier(0.45, 0.05, 0.55, 0.95);
   z-index: 10;
@@ -454,18 +454,20 @@
 /* Floating Speech Bubble Above Cartoon Girl */
 .girl-speech-bubble {
   position: absolute;
-  bottom: 104px;
+  bottom: 108px;
   background: rgba(11, 18, 33, 0.98);
   border: 2px solid var(--primary);
   border-radius: 18px;
   padding: 14px 18px;
-  min-width: 270px;
+  min-width: 260px;
   max-width: 350px;
   box-shadow: 0 14px 30px rgba(0, 0, 0, 0.6), 0 0 25px rgba(56, 189, 248, 0.25);
   backdrop-filter: blur(12px);
   animation: bubblePop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
   pointer-events: auto;
   z-index: 25;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 /* Smart Horizontal Anchor Placement */
@@ -554,7 +556,7 @@
 
 .roadmap-path-svg {
   position: absolute;
-  top: 262px;
+  top: 282px;
   left: 0;
   width: 100%;
   height: 60px;
@@ -896,15 +898,32 @@
    ============================================================ */
 
 @media (max-width: 900px) {
+  .roadmap-hud {
+    margin-bottom: 50px;
+  }
+
+  .roadmap-path-container {
+    padding: 240px 8px 30px;
+  }
+
+  .cartoon-girl-walker {
+    top: 170px;
+  }
+
+  .roadmap-path-svg {
+    top: 248px;
+    height: 52px;
+  }
+
   .roadmap-checkpoints {
     grid-template-columns: repeat(5, 1fr);
-    gap: 8px;
+    gap: 6px;
   }
 
   .checkpoint-island {
-    width: 52px;
-    height: 52px;
-    font-size: 22px;
+    width: 50px;
+    height: 50px;
+    font-size: 21px;
   }
 
   .checkpoint-title-text {
@@ -912,8 +931,13 @@
   }
 
   .checkpoint-boss-tag {
-    right: calc(50% - 28px);
+    right: calc(50% - 26px);
     font-size: 9px;
+  }
+
+  .girl-speech-bubble {
+    min-width: 230px;
+    max-width: 300px;
   }
 }
 
@@ -921,29 +945,85 @@
   .roadmap-hud {
     flex-direction: column;
     align-items: stretch;
-    margin-bottom: 35px;
+    margin-bottom: 45px;
+    gap: 12px;
   }
 
   .hud-controls {
     justify-content: space-between;
   }
 
+  .roadmap-path-container {
+    padding: 220px 6px 24px;
+  }
+
+  .cartoon-girl-walker {
+    top: 155px;
+  }
+
   .roadmap-path-svg {
-    display: none; /* Hide svg bezier on tight screens for clean stacked nodes */
+    top: 232px;
+    height: 48px;
+    display: block; /* Keep visible on tablets/mobile for connected visual progression */
   }
 
   .roadmap-checkpoints {
-    display: flex;
-    overflow-x: auto;
-    padding-bottom: 14px;
-    gap: 16px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: thin;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 4px;
+    overflow-x: visible;
+    padding-bottom: 0;
   }
 
   .checkpoint-node {
-    flex: 0 0 100px;
-    scroll-snap-align: center;
+    flex: initial;
+    padding: 3px;
+  }
+
+  .checkpoint-island {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+    border-width: 2.5px;
+    border-bottom-width: 4px;
+  }
+
+  .checkpoint-label {
+    max-width: 100%;
+    margin-top: 8px;
+    gap: 2px;
+  }
+
+  .checkpoint-level-tag {
+    font-size: 9.5px;
+  }
+
+  .checkpoint-title-text {
+    font-size: 10px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .checkpoint-boss-tag {
+    font-size: 8px;
+    padding: 1px 5px;
+    right: calc(50% - 22px);
+    top: -5px;
+  }
+
+  .girl-speech-bubble {
+    min-width: 210px;
+    max-width: min(290px, 86vw);
+    padding: 10px 14px;
+    bottom: 96px;
+  }
+
+  .bubble-text {
+    font-size: 12.5px;
+    line-height: 1.45;
   }
 
   .quest-card-header {
@@ -962,57 +1042,89 @@
   .quest-title {
     font-size: 20px;
   }
-
-  .roadmap-path-container {
-    padding: 220px 10px 30px;
-  }
-
-  .cartoon-girl-walker {
-    top: 145px;
-  }
-
-  .girl-speech-bubble {
-    min-width: 230px;
-    max-width: 290px;
-    padding: 12px 14px;
-    bottom: 96px;
-  }
-
-  .bubble-text {
-    font-size: 13px;
-    line-height: 1.5;
-  }
 }
 
 @media (max-width: 480px) {
-  .cartoon-girl-figure {
-    width: 65px;
-    height: 82px;
+  .roadmap-hud {
+    padding: 12px 14px;
+    margin-bottom: 40px;
   }
 
   .roadmap-path-container {
-    padding: 195px 10px 25px;
+    padding: 195px 4px 20px;
   }
 
   .cartoon-girl-walker {
-    top: 125px;
+    top: 135px;
+  }
+
+  .roadmap-path-svg {
+    top: 206px;
+    height: 40px;
+  }
+
+  .cartoon-girl-figure {
+    width: 60px;
+    height: 76px;
   }
 
   .girl-speech-bubble {
-    max-width: 240px;
-    min-width: 195px;
+    min-width: 190px;
+    max-width: min(250px, 88vw);
     bottom: 84px;
     padding: 8px 12px;
   }
 
+  .bubble-speaker {
+    margin-bottom: 4px;
+    padding-bottom: 4px;
+  }
+
+  .speaker-name {
+    font-size: 10.5px;
+  }
+
+  .speaker-tag {
+    font-size: 9px;
+    padding: 1px 5px;
+  }
+
   .bubble-text {
-    font-size: 12px;
-    line-height: 1.45;
+    font-size: 11.5px;
+    line-height: 1.4;
   }
 
   .checkpoint-island {
-    width: 46px;
-    height: 46px;
-    font-size: 19px;
+    width: 38px;
+    height: 38px;
+    font-size: 16px;
+    border-width: 2px;
+    border-bottom-width: 3px;
+  }
+
+  .checkpoint-level-tag {
+    font-size: 8.5px;
+  }
+
+  .checkpoint-title-text {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 360px) {
+  .checkpoint-island {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .checkpoint-title-text {
+    display: none; /* Hide subtitle on ultra-narrow 320px-360px screens for clean spacing */
+  }
+
+  .girl-speech-bubble {
+    min-width: 175px;
+    max-width: 230px;
+    padding: 6px 10px;
   }
 }

@@ -7,7 +7,7 @@ function Navbar() {
   // Close menu on resize (to desktop)
   useEffect(() => {
     const close = () => {
-      if (window.innerWidth > 900) setMenuOpen(false);
+      if (window.innerWidth > 1120) setMenuOpen(false);
     };
     window.addEventListener("resize", close);
     return () => window.removeEventListener("resize", close);
@@ -35,14 +35,14 @@ function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <div className="logo">
+        <a href="#" className="logo" aria-label="Sona Pandi R - Portfolio Home">
           <img
             src="/Logo_for_letter__S_-removebg-preview.png"
             alt="Sona Logo"
             className="logo-img"
           />
           <span className="logo-text">Sona Pandi R</span>
-        </div>
+        </a>
 
         {/* Desktop nav */}
         <ul className="nav-links">
